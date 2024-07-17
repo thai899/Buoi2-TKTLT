@@ -26,6 +26,15 @@ void taomangngaunhientoanchan(int* arr, int n) {
 		arr[i] = (rand() % 101) *2;
 	}
 }
+int linear_search(int* arr, int n, int x) {
+	for (int i = 0; i < n; i++) {
+		if (arr[i] == x) {
+			return i;
+		}
+	}
+	return -1;
+}
+
 int main()
 {
 	srand(time(0));
@@ -41,9 +50,6 @@ int main()
 		{
 		case 1:
 		{
-			srand(time(0));
-			int n = 15;
-			int arr[100];
 			taomangngaunhien(arr, n);
 			printf("Mang ngau nhien: ");
 			for (int i = 0; i < n; i++) {
@@ -54,9 +60,7 @@ int main()
 		}break;
 		case 2:
 		{
-			srand(time(0));
-			int n = 15;
-			int arr[100];
+			
 			taomangngaunhientoanchan(arr, n);
 			printf("Mang so chan la: ");
 			for (int i = 0; i < n; i++) {
@@ -64,6 +68,17 @@ int main()
 			}
 			printf("\n");
 
+		}break;
+		case 3 :
+		{
+			int x;
+			printf("\nNhap phan tu can tim: ");
+			scanf("%d", &x);
+			if (linear_search(arr, n, x) == -1)
+				printf("\nKhong tim thay phan tu %d trong mang ", x);
+			else
+				printf("\nTim thay phan tu %d trong mang ", x);
+			
 		}break;
 		
 		
