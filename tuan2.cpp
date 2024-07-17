@@ -19,9 +19,18 @@ void taomangngaunhien(int* arr, int n) {
 		arr[i] = rand() % 28;
 	}
 }
-
+void taomangngaunhientoanchan(int* arr, int n) {
+	srand(time(NULL));
+	for (int i = 0; i < n; i++)
+	{
+		arr[i] = (rand() % 101) *2;
+	}
+}
 int main()
 {
+	srand(time(0));
+	int n = 15;
+	int arr[100];
 	int lc;
 	do
 	{
@@ -43,9 +52,23 @@ int main()
 			printf("\n");
 
 		}break;
+		case 2:
+		{
+			srand(time(0));
+			int n = 15;
+			int arr[100];
+			taomangngaunhientoanchan(arr, n);
+			printf("Mang so chan la: ");
+			for (int i = 0; i < n; i++) {
+				printf("%d ", arr[i]);
+			}
+			printf("\n");
+
+		}break;
+		
+		
+		
 		}
-
-
 	} while (lc < 8);
 	return 0;
 }
